@@ -22,6 +22,7 @@ function cgit_admin_register_settings () {
     register_setting('cgit_admin', 'cgit_admin_hide_editor_buttons');
     register_setting('cgit_admin', 'cgit_admin_hide_block_elements');
     register_setting('cgit_admin', 'cgit_admin_force_plain_text');
+    register_setting('cgit_admin', 'cgit_admin_uninstall_delete_settings');
 
 }
 
@@ -239,6 +240,24 @@ function cgit_admin_settings_page () {
                         <label>
                             <input type="checkbox" name="cgit_admin_force_plain_text" value="1"<?php echo get_option('cgit_admin_force_plain_text') ? ' checked="checked"' : ''; ?> />
                             Force paste as plain text
+                        </label>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h3>Plugin</h3>
+
+            <table class="form-table">
+
+                <tr>
+                    <th>
+                        Settings
+                    </th>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cgit_admin_uninstall_delete_settings" value="1"<?php echo get_option('cgit_admin_uninstall_delete_settings') ? ' checked="checked"' : ''; ?> />
+                            Delete settings on plugin uninstall
                         </label>
                     </td>
                 </tr>
