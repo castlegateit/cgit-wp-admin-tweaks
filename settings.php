@@ -84,7 +84,7 @@ function cgit_admin_settings_page () {
                         <label for="welcome_message">Welcome message text</label>
                     </th>
                     <td>
-                        <input type="text" name="welcome_message" id="cgit_admin_welcome_message" value="<?php echo htmlspecialchars(get_option('cgit_admin_welcome_message')); ?>" />
+                        <input type="text" name="cgit_admin_welcome_message" id="cgit_admin_welcome_message" value="<?php echo htmlspecialchars(get_option('cgit_admin_welcome_message')); ?>" />
                     </td>
                 </tr>
 
