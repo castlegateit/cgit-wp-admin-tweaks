@@ -85,6 +85,7 @@ function cgit_admin_settings_page () {
                     </th>
                     <td>
                         <input type="text" name="cgit_admin_welcome_message" id="cgit_admin_welcome_message" value="<?php echo htmlspecialchars(get_option('cgit_admin_welcome_message')); ?>" />
+                        <p class="description">This will replace the welcome message in the admin toolbar. Use <code>%s</code> as a placeholder for the current user&rsquo;s display name.</p>
                     </td>
                 </tr>
 

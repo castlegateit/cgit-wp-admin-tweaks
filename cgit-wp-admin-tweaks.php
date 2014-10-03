@@ -32,14 +32,16 @@ if ( get_option('cgit_admin_hide_toolbar') ) {
  *
  * Replace "Howdy" with something a bit more professional or nothing at all.
  */
-function cgit_admin_edit_welcome_message ($wp_admin_bar) {
+function cgit_admin_edit_welcome_message ($toolbar) {
 
-    $account = $wp_admin_bar->get_node('my-account');
-    $message = get_option('cgit_admin_welcome_message');
-    $title   = str_replace( 'Howdy,', $message, $account->title );
+    $user    = wp_get_current_user();
+    $name    = $user->display_name;
+    $account = $toolbar->get_node('my-account');
+    $text    = sprintf( get_option('cgit_admin_welcome_message'), $name );
+    $title   = preg_replace("/[^<>]*{$name}[^<>]*/i", $text, $account->title);
     $node    = array( 'id' => 'my-account', 'title' => $title );
 
-    $wp_admin_bar->add_node($node);
+    $toolbar->add_node($node);
 
 }
 
