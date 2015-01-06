@@ -3,7 +3,7 @@
 /*
 
 Plugin Name: Castlegate IT WP Admin Tweaks
-Plugin URI: http://github.com/castlegateit/cgit-wp-contact-form
+Plugin URI: http://github.com/castlegateit/cgit-wp-admin-tweaks
 Description: Minor tweaks to the WordPress admin panel.
 Version: 1.0
 Author: Castlegate IT
