@@ -18,6 +18,7 @@ function cgit_admin_register_settings () {
     register_setting('cgit_admin', 'cgit_admin_hide_menu_profile');
     register_setting('cgit_admin', 'cgit_admin_hide_menu_tools');
     register_setting('cgit_admin', 'cgit_admin_hide_update_notifications');
+    register_setting('cgit_admin', 'cgit_admin_user_whitelist');
     register_setting('cgit_admin', 'cgit_admin_hide_media_buttons');
     register_setting('cgit_admin', 'cgit_admin_hide_editor_buttons');
     register_setting('cgit_admin', 'cgit_admin_hide_block_elements');
@@ -193,6 +194,25 @@ function cgit_admin_settings_page () {
                         <label>
                             <input type="checkbox" name="cgit_admin_hide_update_notifications" value="1"<?php echo get_option('cgit_admin_hide_update_notifications') ? ' checked="checked"' : ''; ?> />
                             Hide update notifications for non-admin users
+                        </label>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h3>Users</h3>
+
+            <table class="form-table">
+
+                <tr>
+                    <th>
+                        Whitelist
+                    </th>
+                    <td>
+                        <label>
+                            <input type="text" name="cgit_admin_user_whitelist" id="cgit_admin_user_whitelist" value="<?php echo htmlspecialchars(get_option('cgit_admin_user_whitelist')); ?>" />
+                            Approved users
+                            <p class="description">By default, items are hidden for non-admin users. Providing a comma-separated list of user IDs here also hides items for other admin users.</p>
                         </label>
                     </td>
                 </tr>

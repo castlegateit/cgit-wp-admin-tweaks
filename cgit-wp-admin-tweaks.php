@@ -18,6 +18,28 @@ License: MIT
 require_once dirname( __FILE__ ) . '/settings.php';
 
 /**
+ * Check user permissions
+ *
+ * If the user whitelist option is set, only selected users can see hidden admin
+ * menu items. Otherwise, only admin users can see them.
+ */
+function cgit_is_admin() {
+
+    $user_id = get_current_user_id();
+    $option = get_option('cgit_admin_user_whitelist');
+    $whitelist = array_map('trim', explode(',', $option));
+
+    if ($option) {
+        return in_array($user_id, $whitelist);
+    }
+
+    return current_user_can('manage_options');
+
+}
+
+// cgit_is_admin();
+
+/**
  * Hide admin toolbar
  *
  * Hide the admin toolbar for all users. This will override any per-user admin
@@ -54,7 +76,7 @@ if ( get_option('cgit_admin_edit_welcome_message') ) {
  */
 function cgit_admin_hide_menu_items () {
 
-    if ( ! current_user_can('manage_options') ) {
+    if ( ! cgit_is_admin() ) {
 
         if ( get_option('cgit_admin_hide_menu_posts') )      remove_menu_page('edit.php');                // Posts
         if ( get_option('cgit_admin_hide_menu_media') )      remove_menu_page('upload.php');              // Media
@@ -77,7 +99,7 @@ add_action('admin_menu', 'cgit_admin_hide_menu_items');
  * Hide update notifications
  */
 function cgit_admin_hide_update_notifications () {
-    if ( ! current_user_can('manage_options') ) {
+    if ( ! cgit_is_admin() ) {
         remove_action('admin_notices', 'update_nag', 3);
     }
 }
