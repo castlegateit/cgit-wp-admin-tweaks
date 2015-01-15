@@ -16,8 +16,12 @@ if ( get_option('cgit_admin_uninstall_delete_settings') ) {
     delete_option('cgit_admin_hide_menu_comments');
     delete_option('cgit_admin_hide_menu_categories');
     delete_option('cgit_admin_hide_menu_tags');
+    delete_option('cgit_admin_hide_menu_themes');
+    delete_option('cgit_admin_hide_menu_plugins');
     delete_option('cgit_admin_hide_menu_profile');
+    delete_option('cgit_admin_hide_menu_users');
     delete_option('cgit_admin_hide_menu_tools');
+    delete_option('cgit_admin_hide_menu_settings');
     delete_option('cgit_admin_hide_update_notifications');
     delete_option('cgit_admin_user_whitelist');
     delete_option('cgit_admin_hide_media_buttons');

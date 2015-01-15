@@ -78,13 +78,17 @@ function cgit_admin_hide_menu_items () {
 
     if ( ! cgit_is_admin() ) {
 
-        if ( get_option('cgit_admin_hide_menu_posts') )      remove_menu_page('edit.php');                // Posts
-        if ( get_option('cgit_admin_hide_menu_media') )      remove_menu_page('upload.php');              // Media
-        if ( get_option('cgit_admin_hide_menu_links') )      remove_menu_page('link-manager.php');        // Links
-        if ( get_option('cgit_admin_hide_menu_pages') )      remove_menu_page('edit.php?post_type=page'); // Pages
-        if ( get_option('cgit_admin_hide_menu_comments') )   remove_menu_page('edit-comments.php');       // Comments
-        if ( get_option('cgit_admin_hide_menu_profile') )    remove_menu_page('profile.php');             // Profile
-        if ( get_option('cgit_admin_hide_menu_tools') )      remove_menu_page('tools.php');               // Tools
+        if ( get_option('cgit_admin_hide_menu_posts') )    remove_menu_page('edit.php');                // Posts
+        if ( get_option('cgit_admin_hide_menu_media') )    remove_menu_page('upload.php');              // Media
+        if ( get_option('cgit_admin_hide_menu_links') )    remove_menu_page('link-manager.php');        // Links
+        if ( get_option('cgit_admin_hide_menu_pages') )    remove_menu_page('edit.php?post_type=page'); // Pages
+        if ( get_option('cgit_admin_hide_menu_comments') ) remove_menu_page('edit-comments.php');       // Comments
+        if ( get_option('cgit_admin_hide_menu_themes') )   remove_menu_page('themes.php');              // Appearance
+        if ( get_option('cgit_admin_hide_menu_plugins') )  remove_menu_page('plugins.php');             // Plugins
+        if ( get_option('cgit_admin_hide_menu_profile') )  remove_menu_page('profile.php');             // Profile
+        if ( get_option('cgit_admin_hide_menu_users') )    remove_menu_page('users.php');               // Users
+        if ( get_option('cgit_admin_hide_menu_tools') )    remove_menu_page('tools.php');               // Tools
+        if ( get_option('cgit_admin_hide_menu_settings') ) remove_menu_page('options-general.php');     // Settings
 
         if ( get_option('cgit_admin_hide_menu_categories') ) remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category'); // Posts | Categories
         if ( get_option('cgit_admin_hide_menu_tags') )       remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag'); // Posts | Tags

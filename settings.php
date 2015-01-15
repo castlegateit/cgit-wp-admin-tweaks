@@ -15,8 +15,12 @@ function cgit_admin_register_settings () {
     register_setting('cgit_admin', 'cgit_admin_hide_menu_comments');
     register_setting('cgit_admin', 'cgit_admin_hide_menu_categories');
     register_setting('cgit_admin', 'cgit_admin_hide_menu_tags');
+    register_setting('cgit_admin', 'cgit_admin_hide_menu_themes');
+    register_setting('cgit_admin', 'cgit_admin_hide_menu_plugins');
     register_setting('cgit_admin', 'cgit_admin_hide_menu_profile');
+    register_setting('cgit_admin', 'cgit_admin_hide_menu_users');
     register_setting('cgit_admin', 'cgit_admin_hide_menu_tools');
+    register_setting('cgit_admin', 'cgit_admin_hide_menu_settings');
     register_setting('cgit_admin', 'cgit_admin_hide_update_notifications');
     register_setting('cgit_admin', 'cgit_admin_user_whitelist');
     register_setting('cgit_admin', 'cgit_admin_hide_media_buttons');
@@ -160,9 +164,27 @@ function cgit_admin_settings_page () {
                 </tr>
 
                 <tr>
-                    <th rowspan="2">
+                    <th rowspan="6">
                         Hide options menus
                     </th>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cgit_admin_hide_menu_themes" value="1"<?php echo get_option('cgit_admin_hide_menu_themes') ? ' checked="checked"' : ''; ?> />
+                            Appearance
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cgit_admin_hide_menu_plugins" value="1"<?php echo get_option('cgit_admin_hide_menu_plugins') ? ' checked="checked"' : ''; ?> />
+                            Plugins
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
                     <td>
                         <label>
                             <input type="checkbox" name="cgit_admin_hide_menu_profile" value="1"<?php echo get_option('cgit_admin_hide_menu_profile') ? ' checked="checked"' : ''; ?> />
@@ -174,8 +196,26 @@ function cgit_admin_settings_page () {
                 <tr>
                     <td>
                         <label>
+                            <input type="checkbox" name="cgit_admin_hide_menu_users" value="1"<?php echo get_option('cgit_admin_hide_menu_users') ? ' checked="checked"' : ''; ?> />
+                            Users
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>
                             <input type="checkbox" name="cgit_admin_hide_menu_tools" value="1"<?php echo get_option('cgit_admin_hide_menu_tools') ? ' checked="checked"' : ''; ?> />
                             Tools
+                        </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" name="cgit_admin_hide_menu_settings" value="1"<?php echo get_option('cgit_admin_hide_menu_settings') ? ' checked="checked"' : ''; ?> />
+                            Settings
                         </label>
                     </td>
                 </tr>
