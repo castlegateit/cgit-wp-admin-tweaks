@@ -1,5 +1,7 @@
 # Castlegate IT WP Admin Tweaks #
 
+**IMPORTANT: Development of Castlegate IT WP Admin Tweaks has now stopped. The functions provided by Admin Tweaks can now be found in the [CGIT WP Tweak Tool](https://github.com/castlegateit/cgit-wp-tweak-tool) and [Obfuscator](https://github.com/castlegateit/cgit-wp-obfuscator) plugins.**
+
 A plugin that makes it easy to tweak the WordPress admin interface:
 
 *   Hide the admin toolbar
